@@ -44,22 +44,26 @@ def score_word(word):
 #Take in a dictionary with the players as keys in strings and the values as words from each player and provides back a dictionary with each player as key and score of each as value 
 def players_scoring(dictionarylist, resultdict):
     
-    #loop through 
+    #loop through each key of input dictionary 
     for player in dictionarylist:
-    
+        
+        #for each player and is added to 
         player_points = 0
         counter = 1
 
         print("***************************************************\nNow Processing points for player: "+player)
         print("This player has the following words:\n"+str(dictionarylist[player]))
-
+        
+        # loop the values of each player 
         for i in dictionarylist[player]:
             print("\nNow processing the word:\n"+str(counter)+". "+i )
 
+            #run the score_word function to calculate the score of each and word store in the player_points variable
             player_points += score_word(i)
             counter += 1    
         
         print("\nTOTAL SCORE OF THE PLAYER \""+player+"\" IS: "+str(player_points)+"\n")
+        # adding the player and player points to the output dict
         resultdict[player] = player_points
 
     return resultdict
