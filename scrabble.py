@@ -69,4 +69,33 @@ def players_scoring(dictionarylist, resultdict):
     return resultdict
 
 test = players_scoring(player_to_words, player_to_points)
-print(test)
+#print(test)
+
+'''
+if you want extended practice, try to implement some of these ideas with the Python you’ve learned:
+
+play_word() — a function that would take in a player and a word, and add that word to the list of words they’ve played
+
+update_point_totals() — turn your nested loops into a function that you can call any time a word is played
+
+make your letter_to_points dictionary able to handle lowercase inputs as well
+'''
+
+def play_word_add(player, word, score_dict):
+    temp_list = []
+    #loop the keys
+    
+    for user in score_dict:
+    #match the user to the player in the dictionary
+        if user == player:
+            temp_list = score_dict[user]
+    #append the list with the word
+            temp_list.append(word) 
+    #make the new list as value for the player key
+    score_dict[player] = temp_list    
+
+    return score_dict
+
+
+play_word_add("player1", "HELLO", player_to_words)
+print(player_to_words)
