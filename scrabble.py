@@ -94,8 +94,12 @@ def play_word_add(player, word, score_dict):
     #make the new list as value for the player key
     score_dict[player] = temp_list    
 
-    return score_dict
+    
+    players_scoring(player_to_words, player_to_points)
+    
+    return None
 
 
 play_word_add("player1", "HELLO", player_to_words)
 print(player_to_words)
+print(player_to_points)
